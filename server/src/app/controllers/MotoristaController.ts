@@ -13,18 +13,6 @@ class MotoristaController {
     return response.status(200).json(motoristas);
   }
 
-  // public async show(request: Request, response: Response): Promise<Response> {
-  //   const { doctor_id } = request.params;
-
-  //   const patientsRepository = getRepository(Motorista);
-
-  //   const specialty = await patientsRepository.findOne(doctor_id, {
-  //     select: ['specialty'],
-  //   });
-
-  //   return response.status(200).json(specialty);
-  // }
-
   public async store(request: Request, response: Response): Promise<Response> {
     const { nome } = request.body;
 

@@ -13,17 +13,17 @@ class CompradorController {
     return response.status(200).json(compradores);
   }
 
-  // public async show(request: Request, response: Response): Promise<Response> {
-  //   const { doctor_id } = request.params;
+  public async show(request: Request, response: Response): Promise<Response> {
+    const { comprador_id } = request.params;
 
-  //   const patientsRepository = getRepository(Comprador);
+    const compradoresRepository = getRepository(Comprador);
 
-  //   const specialty = await patientsRepository.findOne(doctor_id, {
-  //     select: ['specialty'],
-  //   });
+    const telefone = await compradoresRepository.findOne(comprador_id, {
+      select: ['telefone'],
+    });
 
-  //   return response.status(200).json(specialty);
-  // }
+    return response.status(200).json(telefone);
+  }
 
   public async store(request: Request, response: Response): Promise<Response> {
     const { nome, telefone } = request.body;

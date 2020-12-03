@@ -15,23 +15,14 @@ class EntregaController {
     return response.status(200).json(entregas);
   }
 
-  // public async delete(request: Request, response: Response): Promise<Response> {
-  //   const { id } = request.params;
+  public async delete(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
 
-  //   const consultationsRepository = getRepository(Consultation);
-  //   const consultation = await consultationsRepository.delete(id);
+    const entregasRepository = getRepository(Entrega);
+    const entrega = await entregasRepository.delete(id);
 
-  //   return response.status(200).json(consultation);
-  // }
-
-  // public async update(request: Request, response: Response): Promise<Response> {
-  //   const { id } = request.params;
-
-  //   const consultationsRepository = getRepository(Consultation);
-  //   const consultation = await consultationsRepository.update(id, request.body);
-
-  //   return response.status(200).json(consultation);
-  // }
+    return response.status(200).json(entrega);
+  }
 
   public async store(request: Request, response: Response): Promise<Response> {
     const {

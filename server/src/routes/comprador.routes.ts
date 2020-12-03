@@ -5,7 +5,7 @@ import CompradorController from '../app/controllers/CompradorController';
 const compradoresRouter = Router();
 
 compradoresRouter.get('/', CompradorController.index);
-// doctorsRouter.get('/:doctor_id', DoctorController.show);
+compradoresRouter.get('/:comprador_id', CompradorController.show);
 compradoresRouter.post('/', CompradorController.store);
 
 export default compradoresRouter;
